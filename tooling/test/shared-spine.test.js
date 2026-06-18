@@ -35,3 +35,12 @@ test('voice file runtime checklist tracks the dev lint (parity)', () => {
   for (const banned of ["don't buy", 'we recommend', 'overall grade'])
     assert.ok(t.includes(banned), `missing banned example: ${banned}`);
 });
+
+test('voice file harmonizes §6 provenance tags with the reliability tiers', () => {
+  const t = read('shared/voice-and-guardrails.md');
+  for (const tok of ['Independent', 'Vendor claim', 'Provided doc'])
+    assert.match(t, new RegExp(tok));
+  assert.match(t, /provenance/i);
+  assert.match(t, /reliability follows from independent corroboration/i);
+  assert.match(t, /evidence-standards\.md/);
+});

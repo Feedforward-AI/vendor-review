@@ -74,6 +74,14 @@ Tag every finding with its **evidence tier**:
 2. **Tier 2 — credible secondary**: reputable third-party analysis, named-source reporting.
 3. **Tier 3 — unverified/anecdotal**: forum posts, marketing claims, single anonymous reports.
 
+**Dossier tag — provenance (authoritative for `dossier.md`).** In the research dossier, tag each
+finding by **provenance**, the axis defined in
+`skills/vendor-research/references/evidence-standards.md`: **Independent** (third-party / community /
+analyst — strongest), **Vendor claim** (the vendor's own surfaces or proposal — a claim, not proof),
+or **Provided doc** (a primary-source document the exec supplied, possibly confidential). The Tier
+1/2/3 scale above still describes *how much to trust* a finding; **reliability follows from independent corroboration**, not from who is speaking. If the two ever seem to disagree,
+`evidence-standards.md` governs the dossier label.
+
 Marketing claims are **claims, not evidence**. **Never fabricate** a source, a quote, or a fact.
 
 ## Status vocabularies (deliberately distinct)
