@@ -8,7 +8,7 @@ const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 
 test('README documents frozen install, run command, fallback, privacy — no tier labels', () => {
   const t = read('README.md');
-  assert.match(t, /\/plugin marketplace add feedforward\/vendor-review/);
+  assert.match(t, /\/plugin marketplace add Feedforward-AI\/vendor-review/);
   assert.match(t, /\/plugin install vendor-review@feedforward/);
   assert.match(t, /git clone/i);                       // fallback
   assert.match(t, /\/vendor-review:vendor-evaluation/); // how to run

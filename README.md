@@ -9,7 +9,7 @@ bringing the learning internally to strengthen your organization?*
 ## Install
 
 ```
-/plugin marketplace add feedforward/vendor-review
+/plugin marketplace add Feedforward-AI/vendor-review
 /plugin install vendor-review@feedforward
 ```
 
@@ -18,7 +18,7 @@ bringing the learning internally to strengthen your organization?*
 If you'd rather run from source (or the marketplace isn't reachable):
 
 ```
-git clone https://github.com/feedforward/vendor-review
+git clone https://github.com/Feedforward-AI/vendor-review
 ```
 
 Then point Claude Code at the cloned directory — either `claude --plugin-dir ./vendor-review`, or
