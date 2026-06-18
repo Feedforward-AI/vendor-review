@@ -1,0 +1,8 @@
+# OS noise
+.DS_Store
+
+# Per-evaluation runtime outputs (generated when the pack runs)
+vendor-evaluations/
+
+# Unrelated file present in the working folder — excluded from version control
+source_docs/The Sword of Christ*
