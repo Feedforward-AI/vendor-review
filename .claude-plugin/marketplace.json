@@ -1,0 +1,7 @@
+{
+  "name": "feedforward",
+  "owner": { "name": "Feedforward" },
+  "plugins": [
+    { "name": "vendor-review", "source": "./", "description": "Opinionated, capacity-building vendor evaluation with a branded report." }
+  ]
+}

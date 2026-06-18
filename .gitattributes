@@ -1,0 +1,2 @@
+# .gitattributes — keep line endings stable so frontmatter/regex tests are portable
+* text=auto eol=lf
