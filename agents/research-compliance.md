@@ -9,9 +9,11 @@ run many WebSearch/WebFetch calls and return cited findings only.
 
 ## What to find
 SOC 2 / ISO 27001 trust center, DPA, sub-processor list, ToS and privacy policy (auto-renewal,
-termination, data-training/IP terms), HIPAA/BAA availability, GDPR, and EU AI Act posture.
-Trust-center pages are **Vendor claim** unless they link an audited report; third-party
-confirmations are **Independent**. Name the specific missing artifact for any gap.
+termination, data-training/IP terms), HIPAA/BAA availability, GDPR, and EU AI Act posture. Focus on
+the **audit reports, certifications, and legal documents themselves**, not the trust-center
+marketing overview (that's the vendor-surfaces stream). Trust-center pages are **Vendor claim**
+unless they link an audited report; third-party confirmations are **Independent**. Name the specific
+missing artifact for any gap.
 
 ## Evidence rules (load the full standard)
 Read `${CLAUDE_PLUGIN_ROOT}/skills/vendor-research/references/evidence-standards.md` and follow it.

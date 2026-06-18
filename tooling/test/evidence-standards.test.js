@@ -26,3 +26,12 @@ test('evidence-standards states the discipline rules', () => {
 test('evidence-standards harmonizes provenance with the spine reliability scale', () => {
   assert.match(read(FILE), /reliability follows from independent corroboration/i);
 });
+
+test('reconciliation example does not reuse a Provided-doc noun (no "contract" collision)', () => {
+  // "contract" is a canonical Provided-doc example; it must not also be the
+  // reliable-Vendor-claim example, or an agent could tag a contract clause either way.
+  const t = read(FILE);
+  const recon = t.slice(t.indexOf('### Provenance vs. reliability'), t.indexOf('## Citation rule'));
+  assert.doesNotMatch(recon, /\bcontract\b/i,
+    'the reliability example must not reuse "contract" (a Provided-doc canonical noun)');
+});

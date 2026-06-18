@@ -7,7 +7,7 @@ const { splitFrontmatter } = require('../md');
 const root = path.join(__dirname, '..', '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 
-test('discover-branding: required frontmatter, web-only tools, no Bash/Write/Edit', () => {
+test('discover-branding: required frontmatter, web-only tools, no Bash/Write/Edit/Read', () => {
   const { frontmatter } = splitFrontmatter(read('agents/discover-branding.md'));
   assert.match(frontmatter, /name:\s*discover-branding\b/);
   assert.match(frontmatter, /description:\s*\S/);
@@ -15,6 +15,7 @@ test('discover-branding: required frontmatter, web-only tools, no Bash/Write/Edi
   assert.doesNotMatch(frontmatter, /\bBash\b/);
   assert.doesNotMatch(frontmatter, /\bWrite\b/);
   assert.doesNotMatch(frontmatter, /\bEdit\b/);
+  assert.doesNotMatch(frontmatter, /\bRead\b/);   // brand discovery is web-only; reads no local files
 });
 
 test('discover-branding: fail-loudly, cite, no raster encode, propose-not-apply', () => {

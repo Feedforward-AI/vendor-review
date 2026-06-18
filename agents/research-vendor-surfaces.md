@@ -11,7 +11,9 @@ surfaces**. You run many WebSearch/WebFetch calls and return cited findings only
 Homepage and product pages, public docs, pricing, security/trust portal, blog, changelog, and
 status/incident history. Capture what the vendor *claims* about product, security, and roadmap.
 Everything from this stream is a **Vendor claim** (a claim, not proof) unless you land on a genuinely
-third-party page, which you tag **Independent**.
+third-party page, which you tag **Independent**. On the security/trust portal, take only the
+**marketing/overview** pages — leave the actual audit reports and certifications to the compliance
+stream (`research-compliance`).
 
 ## Evidence rules (load the full standard)
 Read `${CLAUDE_PLUGIN_ROOT}/skills/vendor-research/references/evidence-standards.md` and follow it.

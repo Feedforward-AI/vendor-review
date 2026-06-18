@@ -18,8 +18,8 @@ Tag each finding with exactly one of:
 
 ### Provenance vs. reliability
 The provenance tag says *who the source is*, not *how much to trust it*. **Reliability follows from independent corroboration**, not from who is speaking: a single anonymous forum post is `Independent`
-but weak; a vendor's signed contract clause is a `Vendor claim` you can rely on for *what the
-contract says*. This reconciles with the Tier 1/2/3 reliability scale in
+but weak; a vendor's published status page is a `Vendor claim` you can rely on for *its reported
+uptime last quarter*. This reconciles with the Tier 1/2/3 reliability scale in
 `shared/voice-and-guardrails.md`: that scale weighs trust; these three tags record provenance. When
 the two seem to disagree, **this file governs the dossier label.**
 

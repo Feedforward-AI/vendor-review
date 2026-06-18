@@ -7,8 +7,7 @@ Personalized criteria for this exec are tracked in `derived-criteria.md`, extrac
 
 ## SEE — Transparency
 - [Vendor claim] Acme states it "shows every system prompt" — https://acme.example/docs/transparency (accessed 2026-06-18). A claim, not proof.
-- [Independent] A developer write-up reports system prompts are not exposed via the API — https://news.example/acme-review (accessed 2026-06-18).
-- Conflict: the vendor claim (prompts visible) conflicts with independent reporting (not exposed); surfaced, not resolved, and routed to questions for the vendor.
+- [Independent] A developer write-up reports system prompts are not exposed via the API, contradicting Acme's "shows every system prompt" claim above; the conflict is surfaced, not resolved, and routed to questions for the vendor — https://news.example/acme-review (accessed 2026-06-18).
 
 ## USE — Genuine Utility
 - [Independent] G2 reviewers report a real reduction in NDA turnaround, with mixed results on complex agreements — https://www.g2.com/products/acme (accessed 2026-06-18).

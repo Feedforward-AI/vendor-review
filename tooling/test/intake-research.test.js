@@ -27,19 +27,30 @@ test('dossier fixture is organized by all six criteria + procurement', () => {
   assert.match(t, /^##\s+Procurement/im);
 });
 
-test('every criteria section carries at least one tier-tagged finding (not just the header)', () => {
-  // split on each `## ` heading; drop the preamble (which holds the header tier-legend line)
+test('every bullet under a criteria section is provenance-tagged + cited (spec §6: every line)', () => {
+  // split on each `## ` heading; drop the preamble (which holds the header tier-legend line).
+  // Stronger than "at least one tagged finding": EVERY substantive bullet in a criteria
+  // section must carry a provenance tag and a citation, so an untagged/uncited bullet
+  // (e.g. a bare conflict line) cannot slip through alongside one tagged finding.
   const sections = fx('dossier.sample.md').split(/^##\s+/m).slice(1);
-  const TIER = /^- \[(?:Independent|Vendor claim|Provided doc)\] /m;
+  const TIER = /^- \[(?:Independent|Vendor claim|Provided doc)\] /;
   for (const c of CRITERIA) {
     const sec = sections.find((s) => s.startsWith(c));
     assert.ok(sec, `missing section ${c}`);
-    assert.match(sec, TIER, `section ${c} has no tier-tagged finding bullet`);
+    const bullets = sec.split(/\r?\n/).filter((l) => l.startsWith('- '));
+    assert.ok(bullets.length >= 1, `section ${c} has no finding bullet`);
+    for (const b of bullets) {
+      assert.match(b, TIER, `section ${c}: every bullet must be tier-tagged — got: ${b}`);
+      if (/^- \[(?:Independent|Vendor claim)\] /.test(b)) {  // web tiers cite URL + access date
+        assert.match(b, /https?:\/\//, `section ${c}: web finding missing URL — ${b}`);
+        assert.match(b, /accessed 20\d\d-\d\d-\d\d/, `section ${c}: web finding missing access date — ${b}`);
+      }
+    }
   }
 });
 
 test('provided-doc findings cite file + section, not a web-style accessed date', () => {
-  const lines = fx('dossier.sample.md').split('\n').filter((l) => l.startsWith('- [Provided doc]'));
+  const lines = fx('dossier.sample.md').split(/\r?\n/).filter((l) => l.startsWith('- [Provided doc]'));
   assert.ok(lines.length >= 1, 'has at least one provided-doc finding');
   for (const l of lines) {
     assert.match(l, /materials\//, l);       // file name
