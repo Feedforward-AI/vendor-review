@@ -1,0 +1,7 @@
+{
+  "name": "vendor-review-dev",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Dev tooling and tests for the vendor-review plugin (not shipped to end users).",
+  "scripts": { "test": "node --test tooling/test/*.test.js" }
+}
