@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Revise Plan 01 per 5-lens review; record evaluations *)"
+    ]
+  }
+}

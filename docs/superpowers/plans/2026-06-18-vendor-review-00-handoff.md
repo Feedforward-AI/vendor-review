@@ -42,7 +42,7 @@ handoff — no transcript needs to travel.
 
 | Plan | Subsystem | Consumes (from prior plans) | Produces — testable deliverable | Status |
 |---|---|---|---|---|
-| **01** | Foundation: manifests, slug, `state.json`, guardrail lint, shared spine, entry command | — | Plugin installs; command scaffolds `./vendor-evaluations/<slug>/` + `state.json`; `npm test` green | **Plan written; build pending** |
+| **01** | Foundation: manifests, slug, `state.json`, guardrail lint, shared spine, entry command | — | Plugin installs; command scaffolds `./vendor-evaluations/<slug>/` + `state.json`; `npm test` green | **Plan written (revised after 5-lens review); build pending** |
 | **02** | Intake + Research (Phases 1–2) | `slugify`, `state.js`, shared spine, `lint()` | Dry-run → valid `intake.md` + cited `dossier.md` (evidence tiers + gaps) | Not started |
 | **03** | Assessment + Procurement (Phases 3–4) | dossier/intake/derived-criteria artifacts, shared spine, `lint()` | Fixture dossier → valid `capacity-assessment.md` + `procurement-review.md`; lint green | Not started |
 | **04** | Report (Phase 5 + closing) | all artifacts + brand assets | Fixture artifacts → self-contained branded `report.html` + 4 variants + a custom output; golden-fixture compare | Not started |
@@ -119,6 +119,10 @@ sections); all four variants and one custom output render; **lint green across `
 - **No tier labels** ("Fortune 100/500"); use "senior leaders," "your organization."
 - **No `Bash` in shipped command/skills.** Runtime `allowed-tools`: `Read, Write, Edit, WebSearch,
   WebFetch, Task`. (Dev tooling may use Node/Bash freely — it isn't shipped.)
+- **"Consumes" means contract, not import.** `slug.js`, `state.js`, `guardrail-lint.js`, and
+  `guardrail-rules.js` are exercised by **dev tests** and serve as **shape/rule contracts** for later
+  plans' skills/command. The no-`Bash` markdown surfaces **re-express** those rules (e.g. the runtime
+  guardrail checklist mirrors `guardrail-rules.js`); they never `require()` the modules at runtime.
 - **Workspace** in the user's CWD at `./vendor-evaluations/<vendor-slug>/`.
 - **Framework non-negotiable; no false certainty (name the specific artifact); fail loudly + 3-way
   routing; three evidence tiers; never fabricate.**
