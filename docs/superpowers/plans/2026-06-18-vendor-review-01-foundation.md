@@ -14,7 +14,7 @@ This is **plan 1 of 4** (revised 2026-06-18 after a 5-lens review — see `docs/
 
 *(Every task implicitly includes these — values copied verbatim from the spec.)*
 
-- **Naming frozen:** GitHub `feedforward/vendor-review` · marketplace name `feedforward` · plugin name & local dir `vendor-review`.
+- **Naming frozen:** GitHub `Feedforward-AI/vendor-review` · marketplace name `feedforward` · plugin name & local dir `vendor-review`.
 - **§0 governing rule:** maximally opinionated about trade-offs; **never the literal buy/don't-buy sentence.** Allowed: blunt risk-naming, `sentiment`, scorecard counts, "Against your priorities." Banned: literal recommendation strings and any single aggregate "Recommended" grade.
 - **No tier labels anywhere** — never "Fortune 100/500," hyphenated or not. Use "senior leaders," "your organization."
 - **Runtime `allowed-tools` (tight):** `Read, Write, Edit, WebSearch, WebFetch, Task` only. **No `Bash`** in shipped command/skills.
@@ -131,7 +131,7 @@ Expected: FAIL — `ENOENT` (manifests don't exist yet).
   "version": "0.1.0",
   "description": "Opinionated, capacity-building evaluation of B2B AI vendors for senior leaders: phased research, six-criteria scoring, a courtesy procurement review, and a branded report.",
   "author": { "name": "Feedforward" },
-  "homepage": "https://github.com/feedforward/vendor-review",
+  "homepage": "https://github.com/Feedforward-AI/vendor-review",
   "license": "MIT"
 }
 ```
@@ -773,7 +773,7 @@ const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 
 test('README documents frozen install, run command, fallback, privacy — no tier labels', () => {
   const t = read('README.md');
-  assert.match(t, /\/plugin marketplace add feedforward\/vendor-review/);
+  assert.match(t, /\/plugin marketplace add Feedforward-AI\/vendor-review/);
   assert.match(t, /\/plugin install vendor-review@feedforward/);
   assert.match(t, /git clone/i);                       // fallback
   assert.match(t, /\/vendor-review:vendor-evaluation/); // how to run
@@ -808,7 +808,7 @@ Expected: FAIL — `ENOENT` for `README.md` / `package.json`.
 
 Include (the test guards the key strings): the POV one-liner; the two-command install **verbatim**:
 ```
-/plugin marketplace add feedforward/vendor-review
+/plugin marketplace add Feedforward-AI/vendor-review
 /plugin install vendor-review@feedforward
 ```
 the `git clone` + local `/plugin install` fallback; how to run (`/vendor-review:vendor-evaluation`); the five phases; what you get (Full Report + four cuts + custom outputs); a privacy note (everything local; feedback opt-in). No tier labels.
@@ -821,7 +821,7 @@ Expected: PASS — every test across manifest, slug, state, guardrail-lint, shar
 - [ ] **Step 6: Manual acceptance smoke check** (not automatable under `node --test`)
 
 The handoff's Plan-01 acceptance includes runtime checks the unit tests can't prove. Do them by hand, then clean up:
-1. Install locally: from the repo dir, `/plugin install` the local path (or `/plugin marketplace add feedforward/vendor-review` + install) and confirm `/vendor-review:vendor-evaluation` appears.
+1. Install locally: from the repo dir, `/plugin install` the local path (or `/plugin marketplace add Feedforward-AI/vendor-review` + install) and confirm `/vendor-review:vendor-evaluation` appears.
 2. Run it against a throwaway vendor; confirm it creates `./vendor-evaluations/<slug>/state.json`.
 3. In a node REPL: `require('./tooling/state').validateState(JSON.parse(require('fs').readFileSync('./vendor-evaluations/<slug>/state.json')))` returns `true`.
 4. Delete the throwaway `./vendor-evaluations/<slug>/`.

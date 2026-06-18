@@ -142,7 +142,7 @@ Flip any of these at the start of the relevant build session; update the spec §
 ## After Plan 01 is built — acceptance check
 
 - `npm test` is green (manifest, slug, state, guardrail-lint, shared-spine, command).
-- The plugin installs (`/plugin marketplace add feedforward/vendor-review` + install, or a local
+- The plugin installs (`/plugin marketplace add Feedforward-AI/vendor-review` + install, or a local
   `/plugin install` from the cloned dir).
 - Running `/vendor-review:vendor-evaluation` confirms a vendor, creates `./vendor-evaluations/<slug>/`,
   and writes a valid `state.json`.

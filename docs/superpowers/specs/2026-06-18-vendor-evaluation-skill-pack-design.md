@@ -55,7 +55,7 @@ carries strategic weight.
   and test it.
 - Install (documented copy-paste in README):
   ```
-  /plugin marketplace add feedforward/vendor-review   # one time
+  /plugin marketplace add Feedforward-AI/vendor-review   # one time
   /plugin install vendor-review@feedforward           # installs the pack
   ```
   Fallback: `git clone` + local `/plugin install`.
@@ -66,7 +66,7 @@ carries strategic weight.
 
 ### Pack structure
 ```
-vendor-review/                          # plugin name & local dir (GitHub: feedforward/vendor-review · marketplace: feedforward)
+vendor-review/                          # plugin name & local dir (GitHub: Feedforward-AI/vendor-review · marketplace: feedforward)
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json                # this repo doubles as the public marketplace
@@ -475,7 +475,7 @@ lexical and structural items below are adopted.
 - **Back-edge (Phase 3 → 2):** collect all blocked scores → present at the checkpoint → targeted
   re-research appends a "Targeted follow-up" section to `dossier.md` → re-run assessment. **Loop cap: 2
   rounds**, then remaining gaps escalate to "questions for vendor" / "What we couldn't verify."
-- **Naming frozen:** GitHub `feedforward/vendor-review` · marketplace `feedforward` · plugin name & local
+- **Naming frozen:** GitHub `Feedforward-AI/vendor-review` · marketplace `feedforward` · plugin name & local
   dir `vendor-review`.
 - **Manifests:** `plugin.json` (name `vendor-review`, version, description, author, + the command, skills,
   and agents) and `marketplace.json` (owner `feedforward`, lists the plugin). Field values finalized in
