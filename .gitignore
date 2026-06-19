@@ -1,0 +1,8 @@
+# OS
+.DS_Store
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Local working/source documents — kept out of this public repo for now
+source_docs/
